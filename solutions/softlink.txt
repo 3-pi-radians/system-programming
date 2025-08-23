@@ -1,0 +1,24 @@
+*************************************************************************************
+
+Name: 1_a.c
+Author: Pankaj Deopa
+Description: Create a soft link (symlink system call)
+Date: 24 Aug, 2025
+
+*************************************************************************************
+
+piradians@3piradians:~/Documents/system_programming$ ls
+fork.c  lock  softlinks  solutions
+piradians@3piradians:~/Documents/system_programming$ ln -s fork.c softlinks/forkLink.c
+piradians@3piradians:~/Documents/system_programming$ ls
+fork.c  lock  softlinks  solutions
+piradians@3piradians:~/Documents/system_programming$ cd softlinks
+piradians@3piradians:~/Documents/system_programming/softlinks$ ls
+forkLink.c
+piradians@3piradians:~/Documents/system_programming/softlinks$ ls -l
+total 0
+lrwxrwxrwx 1 piradians piradians 6 Aug 23 18:37 forkLink.c -> fork.c
+piradians@3piradians:~/Documents/system_programming/softlinks$ 
+
+
+****************************************************************************************
