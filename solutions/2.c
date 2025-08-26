@@ -26,9 +26,12 @@ int main() {
 
 /*	
  ********************OUTPUT**************************		  
+  piradians@3piradians:~/Documents/system_programming/solutions$ cc 2.c
+  piradians@3piradians:~/Documents/system_programming/solutions$ ./a.out
+  Process Running: 9315
 
   piradians@3piradians:~$ cd /proc/9315
-  piradians@3piradians:/proc/9315$ cat statu
+  piradians@3piradians:/proc/9315$ cat status
   Name:	a.out
   Umask:	0002
   State:	R (running)
