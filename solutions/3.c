@@ -24,7 +24,7 @@ int main () {
 
 	printf("File created using creat() system call \n");
 	printf("File Descriptor: %d\n", fd);
-
+        close(fd);
 	return 0;
 }
 
