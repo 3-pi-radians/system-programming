@@ -7,7 +7,7 @@
   Date         : 06 Sept, 2025
 
   ************************************************************************
-*/
+ */
 
 #include <stdio.h>
 #include <fcntl.h>
@@ -17,7 +17,7 @@
 
 int main (int argc, char* argv[]) {
     if (argc != 2) {
-        printf("Filename required to acquire a wirte lock!!\n");
+        printf("Filename required to acquire a write lock!!\n");
         return 1;
     }
 
@@ -42,7 +42,7 @@ int main (int argc, char* argv[]) {
     }
 
     printf("Lock successfully acquired\n");
-    printf("\nEnter any character to release : ");
+    printf("\nHit enter to release the lock -> ");
     getchar();
     printf("\nLock released..\n");
 
@@ -53,21 +53,66 @@ int main (int argc, char* argv[]) {
 	return 0;
 }
 
-
 /*
- ********************************************* OUTPUT *******************************************
+ *********************************************** OUTPUT ********************************************
 
-    piradians@3piradians:~/Documents/system_programming/solutions$ cc 16_wrlck.c
-    piradians@3piradians:~/Documents/system_programming/solutions$ ./a.out
-    Filename required to acquire a wirte lock!!
-    piradians@3piradians:~/Documents/system_programming/solutions$ ./a.out 14.c
+                                                TERMINAL 1 (Writer #1)
+
+    piradians@3piradians:~/Documents/system_programming/solutions$ cc 16_wrlck.c -o wrlock.out
+    piradians@3piradians:~/Documents/system_programming/solutions$ ./wrlock.out 14.c
+    Trying to acquire write lock..
+    Lock successfully acquired
+
+    Hit enter to release the lock ->
+
+    Lock released..
+    piradians@3piradians:~/Documents/system_programming/solutions$
+ 
+ ==================================================================================================
+
+                                                TERMINAL 2 (Reader #1)
+
+    ###  Reader waiting for the resource to be free for acquiring read lock  ###
+
+    piradians@3piradians:~/Documents/system_programming/solutions$ cc 16_rdlck.c -o rdlock.out
+    piradians@3piradians:~/Documents/system_programming/solutions$ ./rdlock.out 14.c
+    Trying to acquire read lock..      ## waiting
+
+    ###  Read lock is acquired after the write lock is released by the writer. ###
+
+    Read lock acquired
+
+    Hit enter to release the lock ->
+
+    Lock released..
+    piradians@3piradians:~/Documents/system_programming/solutions$
+
+===================================================================================================
+
+                                                TERMINAL 3 (Writer #2)
+
+    ###  Trying to acquire a write lock when other process has a lock on it - Denied   ###
+    
+    piradians@3piradians:~/Documents/system_programming/solutions$ ./wrlock.out 14.c
+    Trying to acquire write lock.. 
+    fcntl: Resource temporarily unavailable
+
+    ###  Trying to acquire write lock when other process has a read lock on the file - Denied  ###
+
+    piradians@3piradians:~/Documents/system_programming/solutions$ ./wrlock.out 14.c
+    Trying to acquire write lock.. 
+    fcntl: Resource temporarily unavailable
+
+    ###   Write lock acquired when there is no read or write lock by any other process  ###
+
+    piradians@3piradians:~/Documents/system_programming/solutions$ ./wrlock.out 14.c
     Trying to acquire write lock.. 
     Lock successfully acquired
-    
-    Enter any character to release : k
-    
+
+    Hit enter to release the lock ->
+
     Lock released..
- 
- ***********************************************************************************************
- * 
+    piradians@3piradians:~/Documents/system_programming/solutions$ 
+
+****************************************************************************************************
 */
