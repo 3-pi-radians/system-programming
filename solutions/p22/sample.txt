@@ -1,0 +1,2 @@
+Text written by parent process 
+Text written by child process
