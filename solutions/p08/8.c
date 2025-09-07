@@ -14,9 +14,13 @@
 #include <stdlib.h>
 #include <fcntl.h>
 
-int main() {
-    int fd  = open("File1.txt", O_RDONLY); // open the file in read only mode;
+int main(int argc, char* argv[]) {
+    if (argc != 2) {
+        printf("ERROR: Filename required!!\n");
+        exit(1);
+    }
 
+    int fd  = open(argv[1], O_RDONLY); // open the file in read only mode;
     if (fd < 0 ) {
         perror("Unable to open file \n");
         return 1;
@@ -37,11 +41,12 @@ int main() {
 /*
  ************************************* OUTPUT ******************************************
 
-  piradians@3piradians:~/Documents/system_programming/solutions$ cc 8.c
-  piradians@3piradians:~/Documents/system_programming/solutions$ ./a.out
-  Contents of file 1
-  Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..
-  piradians@3piradians:~/Documents/system_programming/solutions$ 
+    piradians@3piradians:~/Documents/system_programming/solutions/p08$ cc 8.c
+    piradians@3piradians:~/Documents/system_programming/solutions/p08$ ./a.out
+    ERROR: Filename required!!
+    piradians@3piradians:~/Documents/system_programming/solutions/p08$ ./a.out sample.txt
+    This is a sample text form sample.txt
+    piradians@3piradians:~/Documents/system_programming/solutions/p08$ 
 
  ****************************************************************************************
 */

@@ -61,52 +61,52 @@ int main (int argc, char* argv[]) {
                                                                          
                                              TERMINAL 1 (Reader #1)
 
-    ###   Acquiring read lock on file 14.c  ###
+    ###   Acquiring read lock on file sample.txt  ###
     
-    piradians@3piradians:~/Documents/system_programming/solutions$ ./a.out 14.c
+    piradians@3piradians:~/Documents/system_programming/solutions/p16$ ./a.out sample.txt
     Trying to acquire read lock.. 
     Read lock acquired
 
     Hit enter to release the lock ->
 
     Lock released..
-    piradians@3piradians:~/Documents/system_programming/solutions$ 
+    piradians@3piradians:~/Documents/system_programming/solutions/p16$ 
 
 =============================================================================================================
 
                                              TERMINAL 2 (Reader #2)
 
-    ###   Simultaneously acquiring read lock on file 14.c - Allowed   ###
+    ###   Simultaneously acquiring read lock on file sample.txt - Allowed   ###
 
-    piradians@3piradians:~/Documents/system_programming/solutions$ ./a.out 14.c
+    piradians@3piradians:~/Documents/system_programming/solutions/p16$ ./a.out sample.txt
     Trying to acquire read lock..
     Read lock acquired
 
     Hit enter to release the lock ->
     
     Lock released..
-    piradians@3piradians:~/Documents/system_programming/solutions$
+    piradians@3piradians:~/Documents/system_programming/solutions/p16$
 
 =============================================================================================================
 
                                              TERMINAL 3 (Writer #1)
 
-    ###  Trying to acquire lock on file 14.c when read lock is already acquired by another process. ###
+    ###  Trying to acquire lock on file sample.txt when read lock is already acquired by another process. ###
 
-    piradians@3piradians:~/Documents/system_programming/solutions$ ./a.out 14.c
+    piradians@3piradians:~/Documents/system_programming/solutions/p16$ ./a.out sample.txt
     Trying to acquire write lock.. 
     fcntl: Resource temporarily unavailable
 
     ###  Acquiring write lock successful after the read lock is released. ###
      
-    piradians@3piradians:~/Documents/system_programming/solutions$ ./a.out 14.c
+    piradians@3piradians:~/Documents/system_programming/solutions/p16$ ./a.out sample.txt
     Trying to acquire write lock.. 
     Lock successfully acquired
 
     Hit enter to release the lock ->
 
     Lock released..
-    piradians@3piradians:~/Documents/system_programming/solutions$ 
+    piradians@3piradians:~/Documents/system_programming/solutions/p16$ 
 
  ***********************************************************************************************************
 */

@@ -49,14 +49,13 @@ int main () {
         
      printf("Message appended successfully by file descriptors\n");
 
-    close(fd1);
-    close(fd2);
-    close(fd3);
-    close(fd4);
+     close(fd1);
+     close(fd2);
+     close(fd3);
+     close(fd4);
 
     return 0;
 }
-
 
 /*
  *********************************** OUTPUT ***************************************

@@ -11,11 +11,16 @@
 #include <stdio.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <stdlib.h>
 
-int main () {
+int main (int argc, char* argv[]) {
 	int fd;
+    if (argc != 2) {
+        printf("Filename required!!\n");
+        exit(1);
+    }
 
-	fd = open("creat_sys_call.txt", O_RDWR);
+	fd = open(argv[1], O_RDWR);
 	if (fd == -1) {
 		perror("open");
 		return fd;
@@ -33,7 +38,7 @@ int main () {
  * **************** OUTPUT *******************
   
   piradians@3piradians:~/Documents/system_programming/solutions$ cc 4.c
-  piradians@3piradians:~/Documents/system_programming/solutions$ ./a.out
+  piradians@3piradians:~/Documents/system_programming/solutions$ ./a.out sample.txt
   File opened successfully  
   File Descriptor : 3
 

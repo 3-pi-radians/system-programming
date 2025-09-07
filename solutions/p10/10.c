@@ -16,7 +16,7 @@
 #include <string.h>
 
 int main () {
-    int fd = open("File2.txt", O_RDWR | O_CREAT, 0644);
+    int fd = open("sample.txt", O_RDWR | O_CREAT, 0644);
     if (fd < 0)  {
         perror("Failed to open file");
         return 1;
@@ -58,7 +58,7 @@ int main () {
   piradians@3piradians:~/Documents/system_programming/solutions$ ./a.out
   The file offset is : 20
   Write operation completed successfully
-  piradians@3piradians:~/Documents/system_programming/solutions$ od -c File2.txt
+  piradians@3piradians:~/Documents/system_programming/solutions$ od -c sample.txt
   0000000   a   b   c   d   e   f   g   h   i   j  \0  \0  \0  \0  \0  \0
   0000020  \0  \0  \0  \0   0   1   2   3   4   5   6   7   8   9
   0000036

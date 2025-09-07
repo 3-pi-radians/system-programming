@@ -20,6 +20,7 @@ int main () {
         printf("%s \n", *env);
         env++;
     }
+
 	return 0;
 }
 
