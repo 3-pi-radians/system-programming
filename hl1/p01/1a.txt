@@ -1,0 +1,15 @@
+*************************************************************************************
+
+    Name: 1a.txt
+    Author: Pankaj Deopa
+    Description: Create a soft link with shell command (symlink)
+    Date: 24 Aug, 2025
+
+*************************************************************************************
+
+    piradians@3piradians:~/Documents/system_programming/hl1/p01$ echo "Sample File" >> sample.txt
+    piradians@3piradians:~/Documents/system_programming/hl1/p01$ ln -s sample.txt softlink.txt
+    piradians@3piradians:~/Documents/system_programming/hl1/p01$ ls -li softlink.txt
+    12292 lrwxrwxrwx 1 piradians piradians 10 Sep  7 17:41 softlink.txt -> sample.txt
+
+****************************************************************************************

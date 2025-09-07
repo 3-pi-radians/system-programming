@@ -1,0 +1,14 @@
+*************************************************************************************
+
+    Name: 3a.txt
+    Author: Pankaj Deopa
+    Description: Create a pipe using shell command.
+    Date: 24 Aug, 2025
+
+*************************************************************************************
+
+    piradians@3piradians:~/Documents/system_programming/hl1/p01$ mkfifo mypipe
+    piradians@3piradians:~/Documents/system_programming/hl1/p01$ ls -l mypipe
+    prw-rw-r-- 1 piradians piradians 0 Sep  7 17:43 mypipe
+
+****************************************************************************************

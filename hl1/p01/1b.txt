@@ -1,0 +1,16 @@
+*************************************************************************************
+
+    Name: 1b.txt
+    Author: Pankaj Deopa
+    Description: Create a hard link with shell command.
+    Date: 24 Aug, 2025
+
+*************************************************************************************
+
+    piradians@3piradians:~/Documents/system_programming/hl1/p01$ echo "Sample File" >> sample.txt
+    piradians@3piradians:~/Documents/system_programming/hl1/p01$ ln sample.txt hardlink.txt
+    piradians@3piradians:~/Documents/system_programming/hl1/p01$ ls -li hardlink.txt sample.txt
+    12530 -rw-rw-r-- 2 piradians piradians 12 Sep  7 17:40 hardlink.txt
+    12530 -rw-rw-r-- 2 piradians piradians 12 Sep  7 17:40 sample.txt
+
+****************************************************************************************
