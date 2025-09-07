@@ -1,0 +1,7 @@
+Contents of sourcefile.txt
+
+The read system call in Linux is a low-level function used to read data from files, devices, or standard input. 
+It interacts directly with the kernel and is defined in <unistd.h>
+
+
+
