@@ -3,7 +3,8 @@
 
   Name         : reservation.c
   Author       : Pankaj Deopa
-  Description  : Template File
+  Description  : Program to open the file, implement write lock, read the ticket number, increment the number and print
+                  the new ticket number then close the file
   Date         : 06 Sept, 2025
 
   ************************************************************************

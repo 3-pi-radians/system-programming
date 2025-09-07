@@ -3,7 +3,7 @@
 
   Name         : inti_ticket.c
   Author       : Pankaj Deopa
-  Description  : Template File
+  Description  : Program to open a file, store a ticket number and exit.
   Date         : 06 Sept, 2025
 
   ************************************************************************
