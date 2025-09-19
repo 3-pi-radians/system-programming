@@ -34,10 +34,10 @@ int main () {
 /*
  ********************************** OUTPUT *******************************************
     
-    piradians@3piradians:~/Documents/system_programming/solutions/p21$ cc 21.c
-    piradians@3piradians:~/Documents/system_programming/solutions/p21$ ./a.out
-    Parent process PID - 13954 
-    Child process PID - 0 
+Parent process PID - 3171 
+Child Process PID (printed from parent) - 3172 
+Child process PID (printed from child) - 3172 
 
 **************************************************************************************
+
 */
