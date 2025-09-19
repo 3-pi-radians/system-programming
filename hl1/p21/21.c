@@ -22,9 +22,10 @@ int main () {
         perror("fork failed");
         return 1;
     } else if (pid == 0) {
-        printf("Child process PID - %d \n", pid);
+        printf("Child process PID (printed from child) - %d \n", getpid());
     } else {
-        printf("Parent process PID - %d \n", pid);
+        printf("Parent process PID - %d \n", getpid());
+        printf("Child Process PID (printed from parent) - %d \n", pid);
     }
 
     return 0;
