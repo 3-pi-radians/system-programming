@@ -1,9 +1,9 @@
 /*
   ************************************************************************
 
-  Name         : template.c
+  Name         : 18_wrlck.c
   Author       : Pankaj Deopa
-  Description  : Template File
+  Description  : Program to implement record locking - Write lock implementation.
   Date         : 26 Aug, 2025
 
   ************************************************************************
@@ -41,6 +41,7 @@ int main () {
     lock.l_len = RECORD_SIZE;
     lock.l_pid = getpid();
     
+    printf("Trying to acquire wirte lock on record no %d... \n", record_no); 
     // acquire write lock
     if (fcntl(fd, F_SETLKW, &lock) == -1) {
         perror("fcntl lock");
@@ -86,9 +87,63 @@ int main () {
 
 
 /*
- * **************** OUTPUT *******************
- *
- *
- *
- * 
+ * ****************************************** OUTPUT ******************************************
+                                    
+                                    TERMINAL 1 (reading record #1)
+
+      piradians@3piradians:~/Documents/system_programming/hl1/p18$ cc 18_rdlck.c -o read
+      piradians@3piradians:~/Documents/system_programming/hl1/p18$ ./read
+      Enter the record number to read [0, 1 or 2] : 1
+      Trying to acquire the read lock on record number : 1
+      Read lock acquired
+      The current value for record number 1 is 2
+      Hit enter to release the lock ->
+
+      Lock released...
+      piradians@3piradians:~/Documents/system_programming/hl1/p18$ 
+
+===========================================================================================================
+
+                                    TERMINAL 2 (reading record #1) 
+
+        ## Trying to read record no.1 sumultaneously with terminal 1 - Allowed ##
+
+    piradians@3piradians:~/Documents/system_programming/hl1/p18$ ./read
+    Enter the record number to read [0, 1 or 2] : 1
+    Trying to acquire the read lock on record number : 1
+    Read lock acquired
+    The current value for record number 1 is 2
+    Hit enter to release the lock ->
+
+
+=============================================================================================================
+
+                                    TERMINAL 3 (Writing on record #1)
+
+
+        ## Tring to acquire a write lock on record no. 1 when terminal 1 and terminal 2 have a read lock on it - Process Blocked ##
+
+    piradians@3piradians:~/Documents/system_programming/hl1/p18$ cc 18_wrlck.c -o write
+    piradians@3piradians:~/Documents/system_programming/hl1/p18$ ./write
+    Enter the record number to write [0, 1 or 2] : 1
+    Trying to acquire wirte lock on record no 1..     ## Process blocked. Waiting for read locks to be released.
+
+
+======== ====================================================================================================
+
+                                    TERMINAL 4 (Writing on record #2)
+
+        ## Trying to write on record no. 4 when record no.1 is locked - Allowed ##
+
+    127 piradians@3piradians:~/Documents/system_programming/hl1/p18$ ./write
+    Enter the record number to write [0, 1 or 2] : 2
+    Trying to acquire wirte lock on record no 2...
+    The current value for record number 2 is 3
+    PID - 20009 update the record value. New value :  4
+    Hit enter to release the lock ->
+
+    Lock released...
+    piradians@3piradians:~/Documents/system_programming/hl1/p18$
+
+************************************************************************************************************
 */
