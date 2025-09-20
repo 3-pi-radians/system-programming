@@ -43,9 +43,9 @@ int main () {
      }
     
      write(fd1,  "Message written by file descriptor : fd1\n",42); 
-     write(fd1,  "Message written by file descriptor : fd2\n",42); 
-     write(fd1,  "Message written by file descriptor : fd3\n",42); 
-     write(fd1,  "Message written by file descriptor : fd4\n",42); 
+     write(fd2,  "Message written by file descriptor : fd2\n",42); 
+     write(fd3,  "Message written by file descriptor : fd3\n",42); 
+     write(fd4,  "Message written by file descriptor : fd4\n",42); 
         
      printf("Message appended successfully by file descriptors\n");
 
