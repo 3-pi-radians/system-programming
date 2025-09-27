@@ -32,9 +32,12 @@ int main()
 }
 
 /*
- * **************** OUTPUT *******************
- *
- *
- *
- * 
+ ****************************** OUTPUT **************************************
+    
+    piradians@3piradians:~/Documents/system_programming/hl2/p06$ ./a.out
+    This is a thread
+    This is a thread
+    This is a thread
+
+*****************************************************************************
 */
