@@ -1,7 +1,7 @@
 /*
   ************************************************************************
 
-  Name         : 17a.c
+  Name         : 17b.c
   Author       : Pankaj Deopa
   Description  : Program to execute ls -l | wc using dup2.
   Date         : 30 Sept, 2025
