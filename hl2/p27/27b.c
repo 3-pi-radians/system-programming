@@ -6,7 +6,7 @@
   Description  : Program to receive messages from the message queue.
 		            a. With 0 as a flag
 		            b. with IPC_NOWAIT as a flag
-  Date         : 26 Aug, 2025
+  Date         : 1 Oct, 2025
 
   ************************************************************************
 */
